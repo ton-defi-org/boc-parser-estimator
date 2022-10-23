@@ -23,8 +23,10 @@ export const BocInfo = (props: {boc: boc, onClear: any, estimateBoc: any}) => {
     
     const stateInit = boc.init ? (<>
         <div className='title '>Message State Init: </div>
-                <pre className='addr overlow-x'>Code:{boc.init?.code.toString()}</pre>
-                <pre className='addr overlow-x'>Data:{boc.init?.data.toString()}</pre>
+        <div className="mini-header">Code</div>
+        <pre className='pre-body'>Code:{boc.init?.code.toString()}</pre>
+        <div className="mini-header">Data</div>
+        <pre className='pre-body'>Data:{boc.init?.data.toString()}</pre>
     </>) : null;
     
     console.log('boc.body',boc.bodyCell);

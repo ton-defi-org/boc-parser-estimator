@@ -183,7 +183,8 @@ function App() {
     const dropArea =  boc.bocData == new Uint8Array(0) ? null : (<div className='drop-zone' {...getRootProps()}></div>)
 
     return (
-    <div className="App">
+        <div className="App">
+            <div className='header'>Boc-VM</div>
         <div className="app-main">
             {/* <h1>Boc Parser</h1>  */}
                 {/* <div className='img'></div> */}

@@ -1,13 +1,30 @@
+@font-face {
+  font-family: "San Francisco";
+  
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "San Francisco","SF Pro Text"," SF Pro Icons"," Helvetica Neue"," Helvetica"," Arial",sans-serif;
   text-align: center;
   font-size: 19px;
+  max-width: 1024px;
+    margin: 10px auto;
+    
 }
 
 .app {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.header {
+  font-size: 40px;
+}
+.mini-header {
+  
+  padding-top: 10px;
+  font-size: 30px;
 }
 
 input {
