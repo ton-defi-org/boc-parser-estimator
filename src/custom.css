@@ -5,6 +5,11 @@ body {
   font-size: 19px;
 }
 
+.app {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 input {
   padding: 8px;
   font-size: 24px;
@@ -30,10 +35,10 @@ input {
   background-position: center;
   background-size: contain;
   width: 400px;
-  height: 400px;
+  height: 250px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -100px;
+  
 }
 
 .file {
@@ -110,4 +115,106 @@ input {
 .boc-error {
   color: crimson;
   padding: 10px;
+}
+
+.overlow-x { 
+  overflow-x: scroll;
+}
+
+.boc-button {
+  
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: rgb(56, 166, 244);
+  margin-left: 20px;
+  border-radius: 7px;
+  
+  cursor: pointer;
+}
+
+.boc-button:hover {
+  
+  text-decoration: underline;
+}
+.border-b {
+  border-bottom: 1px solid black;
+}
+
+.pre-multi-line {
+  white-space: break-spaces;
+  height: 600px;
+}
+
+.message-result {
+  text-align: left;
+  border: 1px solid #aaa;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.res-property {
+  width: 100px;
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.action-line {
+
+}
+
+.message-item {
+      border: 1px solid #ccc;
+        font-size: 16px;
+        margin: 7px;
+        padding: 7px;
+        width: 200px;
+        /* overflow: hidden; */
+        position: relative;
+        margin-left: 70px;
+}
+
+.message-item::after {
+  content: "➡️";
+  font-size: 36px;
+  position: absolute;
+  top: 33%;
+  right: -25%;
+}
+
+.action-line  div {
+  margin: 5px;
+  padding: 5px;
+}
+
+.header-boc-output {
+  font-size: 36px;
+  text-align: center;
+  line-height: 2;
+}
+
+.message-item-row {
+  text-align: left;
+}
+
+.pre-body {
+  background-color: rgb(110 110 110);
+  color: #f2f2f2;
+  max-width: 80%;
+  overflow-x: scroll;
+  margin: 0 auto;
+  height: 26px;
+  margin-top: 10px;
+  padding: 7px;
+
+}
+
+.indent-1 {
+  margin-left: 290px;
+}
+.indent-2 {
+  margin-left: 540px;
 }
