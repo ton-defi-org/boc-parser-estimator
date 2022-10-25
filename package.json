@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf build docs && react-scripts build && mv build docs",
+    "build": "export CI=false && rm -rf build docs && react-scripts build && mv build docs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
