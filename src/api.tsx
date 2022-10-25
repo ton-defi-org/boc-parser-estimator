@@ -1,7 +1,9 @@
 
 
+const BOC_BACKEND = process.env.BOC_BACKEND || 'http://localhost:8080';
+
 export async function estimateBoc(message: any) {
-    let res = await fetch(`http://localhost:8080/sendBoc`, { 
+    let res = await fetch(`${BOC_BACKEND}/sendBoc`, { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

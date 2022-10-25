@@ -1,7 +1,8 @@
 {
   "name": "boc-parser",
   "version": "0.1.0",
-  "homepage": "https://orbs-network.github.io/boc-parser",
+  "homepage": "https://ton-defi-org.github.io/boc-parser-estimator", 
+
   "dependencies": {
     "@types/jest": "^29.1.2",
     "@types/node": "^18.8.4",
@@ -10,6 +11,8 @@
     "bignumber.js": "^9.0.2",
     "bn.js": "^5.2.1",
     "buffer": "6.x",
+    "github-like-avatar-generator": "^1.1.10",
+    "jdenticon": "^3.2.0",
     "react": "17.x",
     "react-app-polyfill": "3.x",
     "react-dom": "17.x",

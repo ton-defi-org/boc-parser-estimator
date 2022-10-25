@@ -1,23 +1,36 @@
-@font-face {
-  font-family: "San Francisco";
-  
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
+
+
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 body {
-  font-family: "San Francisco","SF Pro Text"," SF Pro Icons"," Helvetica Neue"," Helvetica"," Arial",sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   text-align: center;
   font-size: 19px;
   max-width: 1024px;
-    margin: 10px auto;
-    
+  margin: 10px auto;  
 }
-
+pre {
+  max-height: 80px;
+  overflow: scroll;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-20 {
+  margin-top: 10px;
+  padding: 20px;
+}
+.font-xl {
+  font-size: 30px;
+  letter-spacing: 7px;
+}
 .app {
   max-width: 1024px;
   margin: 0 auto;
 }
-
+.app-main {
+  padding-bottom: 20px;
+}
 .header {
   font-size: 40px;
 }
@@ -40,7 +53,7 @@ input {
 }
 
 .addr {
-  margin-top: 8px;
+  
   font-family: monospace;
   color: #3CA4DB;
   word-break: break-all;
@@ -73,15 +86,17 @@ input {
 .drop-zone {
   width: 400px;
   height: 200px;
-  border: dotted #aaa;
-  margin: auto;
-  margin-bottom: 20px;
+  border: 5px dashed #cfcfcf;
+  margin: 20px auto;
+  
 }
 
 .drop-zone::before {
-  content: "Drop Boc Here";
+  content: "Drop *.boc Here";
   position: relative;
-  top:100px;
+  top:80px;
+  font-size: 28px;
+  color: #aaa;
 }
 
 .btn-cancel {
@@ -155,7 +170,7 @@ input {
   text-decoration: underline;
 }
 .border-b {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(202, 202, 202);
 }
 
 .pre-multi-line {
@@ -184,17 +199,19 @@ input {
 }
 
 .message-item {
-      border: 1px solid #ccc;
-        font-size: 16px;
-        margin: 7px;
-        padding: 7px;
-        width: 200px;
-        /* overflow: hidden; */
-        position: relative;
-        margin-left: 70px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin: 7px;
+  padding: 7px;
+  width: 280px;
+  /* overflow: hidden; */
+  position: relative;
+  margin-left: 70px;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
-.message-item::after {
+.message-item:not(:last-child)::after {
   content: "➡️";
   font-size: 36px;
   position: absolute;
@@ -202,22 +219,29 @@ input {
   right: -25%;
 }
 
+
+
 .action-line  div {
   margin: 5px;
   padding: 5px;
+}
+
+.boc-output {
+  padding-bottom: 200px;
 }
 
 .header-boc-output {
   font-size: 36px;
   text-align: center;
   line-height: 2;
+  
 }
 
 .message-item-row {
   text-align: left;
 }
 
-.pre-body {
+/* .pre-body {
   background-color: rgb(110 110 110);
   color: #f2f2f2;
   max-width: 80%;
@@ -227,10 +251,28 @@ input {
   margin-top: 10px;
   padding: 7px;
 
+} */
+
+.message-body-pre{
+  padding: 0.25rem;
+}
+
+.address-avatar {
+  top: 10px;
+  position: relative;
+}
+.message-address {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.message-box-value {
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .indent-1 {
-  margin-left: 290px;
+  margin-left: 340px;
 }
 .indent-2 {
   margin-left: 540px;

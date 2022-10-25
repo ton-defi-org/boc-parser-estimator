@@ -57,6 +57,7 @@ function App() {
 
     /** State */
     const [boc, setBoc] = useState(initialBoc);
+    const [bocName, setBocName] = useState('');
     const [error, setError] = useState('');
     const file: any = useRef(null);
     const [deploying, setDeploying] = useState(0);
@@ -119,6 +120,7 @@ function App() {
     }
 
     function loadBocFromStr(bocStr: string) {
+        setBoc(initialBoc);
         let bocData = parseBoc(bocStr);
         if (!bocData.value) {
             // @ts-ignore
@@ -151,14 +153,15 @@ function App() {
 
 
     const { getRootProps } = useDropzone({onDrop});
-    const bocData = boc.wallet ? <BocInfo boc={boc} onClear={() => { setBoc(initialBoc); }} estimateBoc={estimateBoc} /> : 
+    const bocData = boc.wallet ? <BocInfo boc={boc} bocName={bocName} onClear={() => { setBoc(initialBoc); }} estimateBoc={estimateBoc} /> : 
         (<div>
-            <div className='btn qr-btn' onClick={(e)=> { setReadingQrMode(0); e.stopPropagation();  }}>
+            {/* <div className='button is-info' onClick={(e)=> { setReadingQrMode(0); e.stopPropagation();  }}>
                  <img className='btn-2 qr-logo qr-logo-btn' src={qr_image}></img>Scan QR Code
-            </div>
+            </div> */}
+            <span className='p-10'></span>
             <span className=''> </span> 
-            <input id="file-upload" ref={file} type="file" className='file' onChange={onFileChange}></input>    
-            <label htmlFor="file-upload" className="btn btn-2">Upload Boc File</label>
+            <input id="file-upload" ref={file} type="file" className='file ' onChange={onFileChange}></input>    
+            <label htmlFor="file-upload" className="button is-info">Upload Boc File</label>
         </div>);    
   
     let klass = deploying == 1 ? 'busy' : '';
@@ -184,13 +187,17 @@ function App() {
 
     return (
         <div className="App">
-            <div className='header'>Boc-VM</div>
+            <div className='title'>Ton Boc VM</div>
+            <div className='font-xl'>💎 💼 🖥 </div>
         <div className="app-main">
-            {/* <h1>Boc Parser</h1>  */}
-                {/* <div className='img'></div> */}
-                <BocExample parseBoc={loadBocFromStr} />
+
+                <BocExample parseBoc={(str: string) => {
+                    loadBocFromStr(str);
+                }} setName={(name: string) => {
+                    setBocName(name);
+                }} />
             <div className={klass}>
-                <div className='boc-error'>{boc.error}</div>
+                    {boc.error ? (<div className='boc-error'>{boc.error}</div>) : null}
                 {boc.wallet ? null : dropArea}
                 {boc.wallet ? null :qrReader}
                 {bocData}
