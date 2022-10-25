@@ -11,6 +11,7 @@
     "bignumber.js": "^9.0.2",
     "bn.js": "^5.2.1",
     "buffer": "6.x",
+    "gh-pages": "^4.0.0",
     "github-like-avatar-generator": "^1.1.10",
     "jdenticon": "^3.2.0",
     "react": "17.x",
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf build docs && react-scripts build && mv build docs"
+    "build": "rm -rf build docs && react-scripts build && mv build docs",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

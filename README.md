@@ -4,7 +4,7 @@ Web tool to help parse TON blockchain BOC files to double-check their content be
 
 ## Usage
 
-1. Open the parser website (available on https://ton-defi-org.github.io/boc-parser/)
+1. Open the parser website (available on https://ton-defi-org.github.io/boc-parser-estimator)
  
 2. Open the BOC file to parse through the UI.
 
