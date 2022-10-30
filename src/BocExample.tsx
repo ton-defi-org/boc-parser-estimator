@@ -3,7 +3,7 @@ const BOC_WITH_STATE_INIT = 'te6cckECAwEAAQ8AAt+IAbcaWXVUguqdxz4NjDzLseJCFvWPlUc
 const BOC_REGULAR_TX = 'te6cckEBAgEAqQAB34gBtxpZdVSC6p3HPg2MPMux4kIW9Y+VRyRlDsDBZGq+bvwBGJ82qnbjKmXg2u8Of75PNExfAShOBw8CeFHsqAlP364VGB5bEmZyQllIAE3YESvKWOB22QsEC2NFl1AU9FuQWU1NGLsZbKaYAAAACBwBAGhiAHXG0W1CXIYD9CYFNJmdkDcOTrv6yoxMePd0iiCVO26WIBfXhAAAAAAAAAAAAAAAAAAA3/KpOA==';
 
 const SWAP_TON_JETTON =
-    "te6cckEBAgEAwAAB34gBxw5akQfJaXlBLYO7rsolHBjY6Ik5Q1Lb9shmS/UwX+QFA+Mbn+vZ8Ki59o1FxqPPryCmcmnP7kY/h0spwq4aKadFQ4MoY/f9KegMbjnn82fQFGHrSdFML3/Pd5VYpYkQaU1NGLsaKFOAAAAMWBwBAJZiAANz3f4sXwpr54TNIKSy7yqQ3VQK/hjvbW8+S2+TzSHqIh+YKAAAAAAAAAAAAAAAAAAAAAAAGQAAAAAAAAABQ7msoAYWbs98KJwKMPmK";
+    "te6cckEBAgEAvwAB34gBxw5akQfJaXlBLYO7rsolHBjY6Ik5Q1Lb9shmS/UwX+QHWFrwTABHCdMlIIRLpZbyRs1h5v/mhUOS+cAq3kR2vT+jhNDvpZxGuQcPveMm5XyHFlZXc/f+8tiIXn13NISwOU1NGLsa8z7QAAAMgBwBAJRiAG01gF4g3YBE6C155WD4bBwzVaPiwwux6+ELuGVQS1OdIh+YKAAAAAAAAAAAAAAAAAAAAAAAGQAAAAAAAAABQ7msoAXjF4cRtdX05xc=";
 
 const SWAP_JETTON_TON =
     "te6cckECAwEAAQ8AAd+IAccOWpEHyWl5QS2Du67KJRwY2OiJOUNS2/bIZkv1MF/kBnRSZfWv+62Sayl1lgAMMqDMLT+mekwqIHxlXL1jW+mEkMkaTI0BkS2vX2IAA0Q+FgbTyW2zvLm4Up/kjpBNEFlNTRi7GihegAAADFgcAQFoYgAsINhSTiB00s++1QqrBeb4d1/4USV8aWHz2lw8jgvH06BCwdgAAAAAAAAAAAAAAAAAAQIAxQ+KfqUAAAAAAAAAAWWvMQekAAgBJRzl59Y42NrFTK/xPHgN0bvOu3ZL1501dw55CQFGsuMAOOHLUiD5LS8oJbB3ddlEo4MbHREnKGpbftkMyX6mC/yICrqVAAAAABhBfqjMWOUNPJw=";
@@ -24,7 +24,7 @@ export const BocExample = ( props: {parseBoc: Function, setName: Function}) => {
             <div onClick={onclick.bind(null, BOC_REGULAR_TX, 'boc empty')} className="boc-button">boc empty</div>
             {/* <div onClick={onclick.bind(null, BOC_WITH_STATE_INIT, 'boc boc')} className="boc-button">boc boc-state-init</div> */}
             <div onClick={onclick.bind(null, DEPLOY_JETTON, 'Deploy Jetton')} className="boc-button">Deploy Jetton</div>
-            {/* <div onClick={onclick.bind(null, SWAP_JETTON_TON, 'Swap ton')} className="boc-button">Swap Ton</div> */}
-            <div onClick={onclick.bind(null, SWAP_TON_JETTON, 'Swap Jetton')} className="boc-button">Swap Jetton</div>
+            <div onClick={onclick.bind(null, SWAP_JETTON_TON, 'Swap ton')} className="boc-button">Swap Jetton to Ton</div>
+            <div onClick={onclick.bind(null, SWAP_TON_JETTON, 'Swap Jetton')} className="boc-button">Swap Ton to Jetton</div>
         </div>   )
 }
