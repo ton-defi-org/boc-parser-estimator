@@ -24,7 +24,7 @@ export const BocExample = ( props: {parseBoc: Function, setName: Function}) => {
             <div onClick={onclick.bind(null, BOC_REGULAR_TX, 'boc empty')} className="boc-button">boc empty</div>
             {/* <div onClick={onclick.bind(null, BOC_WITH_STATE_INIT, 'boc boc')} className="boc-button">boc boc-state-init</div> */}
             <div onClick={onclick.bind(null, DEPLOY_JETTON, 'Deploy Jetton')} className="boc-button">Deploy Jetton</div>
-            <div onClick={onclick.bind(null, SWAP_JETTON_TON, 'Swap ton')} className="boc-button">Swap Ton</div>
+            {/* <div onClick={onclick.bind(null, SWAP_JETTON_TON, 'Swap ton')} className="boc-button">Swap Ton</div> */}
             <div onClick={onclick.bind(null, SWAP_TON_JETTON, 'Swap Jetton')} className="boc-button">Swap Jetton</div>
         </div>   )
 }
