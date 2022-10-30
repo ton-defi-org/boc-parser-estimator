@@ -6,15 +6,10 @@ Web tool to help parse TON blockchain BOC files to double-check their content be
 
 1. Open the parser website (available on https://ton-defi-org.github.io/boc-parser-estimator)
  
-2. Open the BOC file to parse through the UI.
+2. Open the BOC file to parse through the UI, or choose an pre maid boc from the list.
 
-3. Example successful output:
+3. Click on estimate BOC button, and view the resulted messages below
 
-```
-flags 18
-EQBP4mzpDIywL1SV-Wp9ZuBBlzprR9eXQgSYGEXiUEHm7yYF
-50000000
-```
 
 To reload a new boc file please refresh the page.
 
