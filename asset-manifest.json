@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/boc-parser-estimator/static/css/main.d2061411.chunk.css",
-    "main.js": "/boc-parser-estimator/static/js/main.f91c1492.chunk.js",
-    "main.js.map": "/boc-parser-estimator/static/js/main.f91c1492.chunk.js.map",
+    "main.js": "/boc-parser-estimator/static/js/main.1e4f9c40.chunk.js",
+    "main.js.map": "/boc-parser-estimator/static/js/main.1e4f9c40.chunk.js.map",
     "runtime-main.js": "/boc-parser-estimator/static/js/runtime-main.ac2f7ff2.js",
     "runtime-main.js.map": "/boc-parser-estimator/static/js/runtime-main.ac2f7ff2.js.map",
     "static/js/2.e7091304.chunk.js": "/boc-parser-estimator/static/js/2.e7091304.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ac2f7ff2.js",
     "static/js/2.e7091304.chunk.js",
     "static/css/main.d2061411.chunk.css",
-    "static/js/main.f91c1492.chunk.js"
+    "static/js/main.1e4f9c40.chunk.js"
   ]
 }
