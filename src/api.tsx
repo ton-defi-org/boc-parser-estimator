@@ -1,6 +1,6 @@
 
 
-const BOC_BACKEND = process.env.BOC_BACKEND || 'http://localhost:8080';
+const BOC_BACKEND = process.env.BOC_BACKEND ||  'https://autumn-river-5068.fly.dev';
 
 export async function estimateBoc(message: any) {
     let res = await fetch(`${BOC_BACKEND}/sendBoc`, { 
