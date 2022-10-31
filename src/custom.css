@@ -203,7 +203,7 @@ input {
   font-size: 16px;
   margin: 7px;
   padding: 7px;
-  width: 280px;
+  /* width: 280px; */
   /* overflow: hidden; */
   position: relative;
   margin-left: 70px;
@@ -215,8 +215,8 @@ input {
   content: "➡️";
   font-size: 36px;
   position: absolute;
-  top: 33%;
-  right: -21%;
+  top: 44%;
+  right: -30%;
 }
 
 
@@ -276,4 +276,36 @@ input {
 }
 .indent-2 {
   margin-left: 540px;
+}
+
+
+.tx-table-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tx-details-box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-top: 1px solid #aaa;  
+  border-bottom: 1px solid #aaa;
+  padding: 10px;
+
+}
+
+.fee-row {
+  display: inline-flex;
+  flex-direction: row;
+  word-wrap: break-word;
+  white-space: normal;
+  align-items: flex-end;
+  font-size: 12px;
+}
+
+.fee-value{
+  
+  margin-left: 10px;
+  min-width: 40px;
 }
