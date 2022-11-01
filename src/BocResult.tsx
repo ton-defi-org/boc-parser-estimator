@@ -17,10 +17,10 @@ export const BocResult = (props: { messageList: any, loadingTime:string }) => {
     });
 
     const { chain } = messageList; 
-    const messagesChain = [];
+    const messagesChains = [];
     let chainCounter = 0;
     for(const key in chain) {
-        messagesChain.push( <MessagesChain chain={chain[key]} key={key} indent={chainCounter++} />)
+        messagesChains.push( <MessagesChain chain={chain[key]} key={key} indent={chainCounter++} />)
     }
     
     
@@ -30,7 +30,7 @@ export const BocResult = (props: { messageList: any, loadingTime:string }) => {
             <div className='mini-header p-20'>
                 {props.loadingTime}
             </div>
-            {messagesChain}
+            {messagesChains}
             {/* {messages} */}
         </div>
     )
@@ -45,13 +45,21 @@ const MessagesChain = ({ chain, indent }: any) => {
    // let source = chain[0].from as Address;
     let addr = addressFromJson(chain[0].from)
     
-    const _class = `flex indent-${indent}`
-    return (<div className={_class}>
-        <div className='genesis-wallet'>
+    let sourceWallet = undefined
+    
+    if (indent == 0) {
+        sourceWallet = (
+            <div className='genesis-wallet'>
             0️⃣
             <div>Source wallet</div>
             <AddressLinkAndAvatar address={addr} />
-        </div>
+        </div>)
+    }
+    const _class = `flex indent-${indent}`
+    return (<div className={_class}>
+        
+            {sourceWallet}
+        
         {messagesChain}
     </div>)
 }
