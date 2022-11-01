@@ -4,7 +4,7 @@
 
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-  text-align: center;
+  
   font-size: 19px;
   max-width: 1024px;
   margin: 10px auto;  
@@ -211,6 +211,9 @@ input {
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
+
+
+
 .message-item:not(:last-child)::after {
   content: "➡️";
   font-size: 36px;
@@ -218,6 +221,8 @@ input {
   top: 44%;
   right: -30%;
 }
+
+
 
 
 
@@ -272,10 +277,10 @@ input {
 }
 
 .indent-1 {
-  margin-left: 340px;
+  margin-left: 260px;
 }
 .indent-2 {
-  margin-left: 540px;
+  margin-left: 460px;
 }
 
 
@@ -308,4 +313,24 @@ input {
   
   margin-left: 10px;
   min-width: 40px;
+}
+
+
+.genesis-wallet {
+  margin-top: 100px;
+  text-align: center;
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+.genesis-wallet::after {
+  content: "➡️";
+  font-size: 36px;
+  position: absolute;
+  top: 44%;
+  right: -30%;
+  
 }

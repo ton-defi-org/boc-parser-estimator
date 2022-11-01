@@ -10,7 +10,7 @@ const AddressAvatar = ({ address, size }: any) => {
     
 }
 
-const AddressLinkAndAvatar = ({ address }: any) => {
+export const AddressLinkAndAvatar = ({ address }: any) => {
     
     const link = `https://tonscan.org/address/${address.toFriendly()}`;
     return (<div className="message-address">
@@ -46,7 +46,7 @@ export const MessageBox = ( { message }: any) => {
                 {/* <div className="message-address"><AddressAvatar  size={32} address={myAddress.toFriendly()}/> {addressEllipsis(myAddress.toFriendly())}</div> */}
                 <div className='message-item-body'>
                     
-                    {/* <div><b className='message-item-row'>from:</b>{addressEllipsis(fromAddress.toFriendly())}</div> */}
+                    <div><b className='message-item-row'>from:</b>{addressEllipsis(fromAddress.toFriendly())}</div>
                     <div className="message-box-value">Value: {tonValue}💎</div>
                     <div>
                         <div>body:</div>

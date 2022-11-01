@@ -1,6 +1,6 @@
 import {  Address, Cell, fromNano } from 'ton';
 import { MessageAction } from './MessageAction';
-import { MessageBox } from './MessageBox';
+import { AddressLinkAndAvatar, MessageBox } from './MessageBox';
 import { addressEllipsis, addressFromJson, strEllipsis } from './utils';
 
 
@@ -41,8 +41,17 @@ const MessagesChain = ({ chain, indent }: any) => {
     const messagesChain = chain.map(  (message: any, index: number) => {
         return <MessageBox message={message} key={index} />
     });
+    //let addr = new Address(chain[0].from.wc, chain[0].from.hash)
+   // let source = chain[0].from as Address;
+    let addr = addressFromJson(chain[0].from)
+    
     const _class = `flex indent-${indent}`
     return (<div className={_class}>
+        <div className='genesis-wallet'>
+            0️⃣
+            <div>Source wallet</div>
+            <AddressLinkAndAvatar address={addr} />
+        </div>
         {messagesChain}
     </div>)
 }
