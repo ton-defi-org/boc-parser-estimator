@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/boc-parser-estimator/static/css/main.00b89bcf.chunk.css",
+    "main.css": "/boc-parser-estimator/static/css/main.5326fe07.chunk.css",
     "main.js": "/boc-parser-estimator/static/js/main.0396761e.chunk.js",
     "main.js.map": "/boc-parser-estimator/static/js/main.0396761e.chunk.js.map",
     "runtime-main.js": "/boc-parser-estimator/static/js/runtime-main.ac2f7ff2.js",
@@ -8,13 +8,13 @@
     "static/js/2.2e8e627c.chunk.js": "/boc-parser-estimator/static/js/2.2e8e627c.chunk.js",
     "static/js/2.2e8e627c.chunk.js.map": "/boc-parser-estimator/static/js/2.2e8e627c.chunk.js.map",
     "index.html": "/boc-parser-estimator/index.html",
-    "static/css/main.00b89bcf.chunk.css.map": "/boc-parser-estimator/static/css/main.00b89bcf.chunk.css.map",
+    "static/css/main.5326fe07.chunk.css.map": "/boc-parser-estimator/static/css/main.5326fe07.chunk.css.map",
     "static/js/2.2e8e627c.chunk.js.LICENSE.txt": "/boc-parser-estimator/static/js/2.2e8e627c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ac2f7ff2.js",
     "static/js/2.2e8e627c.chunk.js",
-    "static/css/main.00b89bcf.chunk.css",
+    "static/css/main.5326fe07.chunk.css",
     "static/js/main.0396761e.chunk.js"
   ]
 }
