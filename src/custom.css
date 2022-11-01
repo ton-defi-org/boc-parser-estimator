@@ -23,6 +23,7 @@ pre {
 .font-xl {
   font-size: 30px;
   letter-spacing: 7px;
+  text-align: center;
 }
 .app {
   max-width: 1024px;
@@ -50,6 +51,7 @@ input {
 
 .title {
   margin-top: 22px;
+  text-align: center;
 }
 
 .addr {
@@ -88,7 +90,7 @@ input {
   height: 200px;
   border: 5px dashed #cfcfcf;
   margin: 20px auto;
-  
+  text-align: center;
 }
 
 .drop-zone::before {
