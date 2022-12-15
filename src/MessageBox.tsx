@@ -64,6 +64,9 @@ export const MessageBox = ( { message }: any) => {
 
 
 function feeFmt(hexStr: string) {
+    if (!hexStr) {
+        return "0";
+    }
     let nano = fromNano(hexStr);
     let dotIndex = nano.indexOf('.')
     return nano.substring(0, dotIndex + 9);
