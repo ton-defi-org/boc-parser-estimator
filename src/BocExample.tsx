@@ -34,7 +34,7 @@ export const BocExample = ( props: {parseBoc: Function, setName: Function}) => {
 
     return (
         <div className="border-b">
-            <div>Boc Examples</div>
+            <div>Examples</div>
             <div onClick={onclick.bind(null, BOC_REGULAR_TX, 'boc empty')} className={"tag boc-button " + classSelected(BOC_REGULAR_TX) }>boc empty</div>
             {/* <div onClick={onclick.bind(null, BOC_WITH_STATE_INIT, 'boc boc')} className={"boc-button">b + }oc boc-state-init</div> */}
             <div onClick={onclick.bind(null, DEPLOY_JETTON, 'Deploy Jetton')} className={"tag boc-button "  + classSelected(DEPLOY_JETTON) }>Deploy Jetton </div>

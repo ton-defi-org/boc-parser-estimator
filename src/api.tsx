@@ -13,3 +13,16 @@ export async function estimateBoc(message: any) {
     let data = await res.text();
     return data;
 }
+
+
+export async function publishBoc(message: any) {
+    let res = await fetch(`https://toncenter.com/api/v2/sendBoc`, { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: `{ "boc": "${message}" }`,
+    });
+    let data = await res.text();
+    return data;
+}

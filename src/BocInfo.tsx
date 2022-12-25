@@ -9,13 +9,15 @@ type BocResult = {
     
 }
 
-export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimateBoc: any}) => {
-    const { boc, onClear, estimateBoc, bocName } = props;
+export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimateBoc: any, publishBoc: any}) => {
+    const { boc, onClear, estimateBoc, bocName, publishBoc } = props;
 
     const [results, setResults] = useState({} as BocResult);
     const [isLoading, setIsLoading] = useState(false);
+    const [isPublishingBoc, setPublishingBoc] = useState(false);
+
     const [loadingTime, setLoadingTime] = useState("");
-    const runBoc = async () => {
+    const runBocEmulator = async () => {
         //@ts-ignore
         setIsLoading(true);
         let now = Date.now();
@@ -24,6 +26,18 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         setIsLoading(false);
         
         setResults(JSON.parse(bocResultResponse));
+    }
+
+    const publishBocClick = async () => {
+        //@ts-ignore
+        setPublishingBoc(true);
+        
+        let bocResultResponse = await publishBoc(boc.rawData);
+        
+        setPublishingBoc(false);
+        
+        console.log(bocResultResponse);
+        
     }
     
     const stateInit = boc.init ? (<>
@@ -77,9 +91,11 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             </div>
             <div>{stateInit}</div>
             <br/>
-            <button className='button is-danger' onClick={onClear}>Clear</button>
+            <button className='button is-danger' onClick={onClear}>❌ Clear</button>
             <span className='p-10'></span>
-            <button className={buttonClass} onClick={runBoc}>Estimate BOC</button>
+            <button className={buttonClass} onClick={runBocEmulator}>🎬 Estimate BOC</button>
+            <span className='p-10'></span>
+            <button className={`button is-primary ${isPublishingBoc ? 'is-loading':''}`} onClick={publishBocClick}>🚀 Publish BOC</button>
             <br></br>
             <BocResult messageList={results} loadingTime={loadingTime} />
         </div>
