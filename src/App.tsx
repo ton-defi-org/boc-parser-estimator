@@ -71,14 +71,6 @@ function App() {
         }
     }, []);
 
-    var onDeploy = async (e: any) => {
-        e.stopPropagation();  
-        setDeploying(1);
-        await tonweb.sendBoc(boc.bocData);
-        
-        setTimeout( ()=> { setDeploying(2)}, 200);
-        setTimeout( ()=> { setDeploying(0)}, 5000);
-    }
 
     const onFileChange = useCallback((_event: any) => {
                 let fr = new FileReader();

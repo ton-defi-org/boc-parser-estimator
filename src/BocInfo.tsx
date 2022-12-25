@@ -4,6 +4,7 @@ import { RawStateInit } from 'ton';
 import { boc } from './App';
 import { BocResult } from './BocResult';
 import BN from "bn.js";
+import { ShareQrCode } from './ShareQrCode';
 
 type BocResult = {
     
@@ -15,6 +16,7 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
     const [results, setResults] = useState({} as BocResult);
     const [isLoading, setIsLoading] = useState(false);
     const [isPublishingBoc, setPublishingBoc] = useState(false);
+    const [shareUrl, setShareUrl] = useState("");
 
     const [loadingTime, setLoadingTime] = useState("");
     const runBocEmulator = async () => {
@@ -38,6 +40,11 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         
         console.log(bocResultResponse);
         
+    }
+
+    const shareClick =async () => {
+        const url = `https://ton-defi-org.github.io/boc-parser-estimator/#${boc.rawData}`
+        setShareUrl(url)
     }
     
     const stateInit = boc.init ? (<>
@@ -95,9 +102,12 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             <span className='p-10'></span>
             <button className={buttonClass} onClick={runBocEmulator}>🎬 Estimate BOC</button>
             <span className='p-10'></span>
-            <button className={`button is-primary ${isPublishingBoc ? 'is-loading':''}`} onClick={publishBocClick}>🚀 Publish BOC</button>
+            <button className={`button is-primary ${isPublishingBoc ? 'is-loading' : ''}`} onClick={publishBocClick}>🚀 Publish BOC</button>
+            <span className='p-10'></span>
+            <button className={`button is-primary }`} onClick={shareClick}>🚀 Share Boc</button>
             <br></br>
             <BocResult messageList={results} loadingTime={loadingTime} />
+            <ShareQrCode shareUrl={shareUrl} />
         </div>
         )
     };
