@@ -183,14 +183,13 @@ function App() {
             <div className='title'>Ton Boc VM</div>
             <div className='font-xl'>💎 💼 🖥 </div>
         <div className="app-main">
-
-                <BocExample parseBoc={(str: string) => {
-                    loadBocFromStr(str);
-                }} setName={(name: string) => {
-                    setBocName(name);
-                }} />
+                <BocExample parseBoc={(str: string) => { loadBocFromStr(str); }}
+                    setName={(name: string) => {
+                        setBocName(name);
+                    }}
+                />
             <div className={klass}>
-                    {boc.error ? (<div className='boc-error'>{boc.error}</div>) : null}
+                {boc.error ? (<div className='boc-error'>{boc.error}</div>) : null}
                 {boc.wallet ? null : dropArea}
                 {boc.wallet ? null :qrReader}
                 {bocData}

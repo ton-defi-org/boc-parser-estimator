@@ -150,11 +150,15 @@ input {
   color: crimson;
   padding: 10px;
 }
-
+.button {
+  margin: 10px 0;
+}
 .overlow-x { 
   overflow-x: scroll;
 }
-
+.border-top {
+  border-top: 1px solid #989898;
+}
 .boc-button {
   
   display: inline-block;

@@ -68,7 +68,7 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         
     }
 
-    let buttonClass = (isLoading ? `is-loading` : ``)+ ` button is-info`
+    let buttonClass = (isLoading ? `is-loading` : ``) + ` button is-info`;
 
     return (
         <div>
@@ -87,7 +87,7 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             </div>
                 <div>
                     <div className='mini-title'>Internal Flags: </div>
-                <div className='addr'>Bounce:{boc.bounce}</div>
+                <div className='addr'>Bounce: {`${boc.bounce}`}</div>
             </div>
             <div>
                 {externalStateInit}
@@ -97,14 +97,14 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
                 <pre className='pre-body'>{boc.bodyCell?.toBoc().toString("hex")}</pre>
             </div>
             <div>{stateInit}</div>
-            <br/>
-            <button className='button is-danger' onClick={onClear}>❌ Clear</button>
+            <br />
+            <button className='button ' onClick={onClear}>❌ Clear</button>
             <span className='p-10'></span>
             <button className={buttonClass} onClick={runBocEmulator}>🎬 Estimate BOC</button>
             <span className='p-10'></span>
             <button className={`button is-primary ${isPublishingBoc ? 'is-loading' : ''}`} onClick={publishBocClick}>🚀 Publish BOC</button>
             <span className='p-10'></span>
-            <button className={`button is-primary }`} onClick={shareClick}>🚀 Share Boc</button>
+            <button className={`button is-success }`} onClick={shareClick}>📷 Share Boc</button>
             <br></br>
             <BocResult messageList={results} loadingTime={loadingTime} />
             <ShareQrCode shareUrl={shareUrl} />

@@ -20,6 +20,7 @@ const STONE = "te6cckECAwEAAS4AAd+IAccOWpEHyWl5QS2Du67KJRwY2OiJOUNS2/bIZkv1MF/kA
 export const BocExample = ( props: {parseBoc: Function, setName: Function}) => {
     
     const [currentBoc, setExampleBoc] = useState("");
+    const [isExpanded, setIsExpanded] = useState(false);
 
     function onclick(data: any, name:string) {
         props.parseBoc(data);
@@ -30,11 +31,23 @@ export const BocExample = ( props: {parseBoc: Function, setName: Function}) => {
     function classSelected(boc: string) {
         return currentBoc == boc ? "is-primary" : ""
     }
+    function expandButton() {
+        return (<>
+            <div className="p-10"></div>    
+            <div className="button is-small right" style={{float:"right"}} onClick={() => {  setIsExpanded(true) }}>Show Examples</div>
+        </>)
+    }
+
+    if (!isExpanded) {
+        return expandButton();
+    }
     
 
     return (
-        <div className="border-b">
-            <div>Examples</div>
+        <div className="border-b p-10">
+            <div>Boc Examples
+                <button style={{ float: "right" }} onClick={() => setIsExpanded(false)}> ❌ </button>
+            </div>
             <div onClick={onclick.bind(null, BOC_REGULAR_TX, 'boc empty')} className={"tag boc-button " + classSelected(BOC_REGULAR_TX) }>boc empty</div>
             {/* <div onClick={onclick.bind(null, BOC_WITH_STATE_INIT, 'boc boc')} className={"boc-button">b + }oc boc-state-init</div> */}
             <div onClick={onclick.bind(null, DEPLOY_JETTON, 'Deploy Jetton')} className={"tag boc-button "  + classSelected(DEPLOY_JETTON) }>Deploy Jetton </div>
