@@ -180,8 +180,9 @@ function App() {
 
     return (
         <div className="App">
-            <div className='title'>Ton Boc VM</div>
-            <div className='font-xl'>💎 💼 🖥 </div>
+            <div className='title'>B💎C Parser</div>
+            <div className='title-h2'>🔍 Parse | 🖥 Emulate | 🚀 Deploy | 📷 Share </div>
+            
         <div className="app-main">
                 <BocExample parseBoc={(str: string) => { loadBocFromStr(str); }}
                     setName={(name: string) => {

@@ -50,8 +50,15 @@ input {
 }
 
 .title {
-  margin-top: 22px;
+  margin-top: 28px;
   text-align: center;
+}
+
+.title-h2 {
+  margin-top: 16px;
+  
+  text-align: center;
+  font-size: 26px;
 }
 
 .addr {
