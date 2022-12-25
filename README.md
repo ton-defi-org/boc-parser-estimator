@@ -1,4 +1,4 @@
-# B💎c Parser
+# B💎C Parser
 Welcome to the B💎c Parser, an HTML page for handling boc files on the TON blockchain.
 
 A boc file, or "Bag of Cells," is a signed transaction on the TON blockchain that has the following fields:
