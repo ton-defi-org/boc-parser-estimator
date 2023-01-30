@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/boc-parser-estimator/static/css/main.686078f7.chunk.css",
-    "main.js": "/boc-parser-estimator/static/js/main.85f49948.chunk.js",
-    "main.js.map": "/boc-parser-estimator/static/js/main.85f49948.chunk.js.map",
+    "main.js": "/boc-parser-estimator/static/js/main.6c6185a5.chunk.js",
+    "main.js.map": "/boc-parser-estimator/static/js/main.6c6185a5.chunk.js.map",
     "runtime-main.js": "/boc-parser-estimator/static/js/runtime-main.ac2f7ff2.js",
     "runtime-main.js.map": "/boc-parser-estimator/static/js/runtime-main.ac2f7ff2.js.map",
-    "static/js/2.8c075da4.chunk.js": "/boc-parser-estimator/static/js/2.8c075da4.chunk.js",
-    "static/js/2.8c075da4.chunk.js.map": "/boc-parser-estimator/static/js/2.8c075da4.chunk.js.map",
+    "static/js/2.9de9badf.chunk.js": "/boc-parser-estimator/static/js/2.9de9badf.chunk.js",
+    "static/js/2.9de9badf.chunk.js.map": "/boc-parser-estimator/static/js/2.9de9badf.chunk.js.map",
     "index.html": "/boc-parser-estimator/index.html",
     "static/css/main.686078f7.chunk.css.map": "/boc-parser-estimator/static/css/main.686078f7.chunk.css.map",
-    "static/js/2.8c075da4.chunk.js.LICENSE.txt": "/boc-parser-estimator/static/js/2.8c075da4.chunk.js.LICENSE.txt"
+    "static/js/2.9de9badf.chunk.js.LICENSE.txt": "/boc-parser-estimator/static/js/2.9de9badf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ac2f7ff2.js",
-    "static/js/2.8c075da4.chunk.js",
+    "static/js/2.9de9badf.chunk.js",
     "static/css/main.686078f7.chunk.css",
-    "static/js/main.85f49948.chunk.js"
+    "static/js/main.6c6185a5.chunk.js"
   ]
 }
