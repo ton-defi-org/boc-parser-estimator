@@ -15,6 +15,8 @@ type RawCommonMessageInfoInternal = {
     createdAt: number;
 };
 
+
+
 export function parseQuery(queryString: string) {
     var query = {};
     var pairs = (queryString[0] === "?" ? queryString.substr(1) : queryString).split("&");
@@ -25,6 +27,10 @@ export function parseQuery(queryString: string) {
         query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
     }
     return query;
+}
+
+export function u8ToBase64Str(u8: any) {
+    return  btoa(String.fromCharCode.apply(null, u8));
 }
 
 export function base64ToArrayBuffer(base64: string) {

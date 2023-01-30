@@ -1,25 +1,20 @@
-# BOC Parser
+# B💎c Parser
+Welcome to the B💎c Parser, an HTML page for handling boc files on the TON blockchain.
 
-Web tool to help parse TON blockchain BOC files to double-check their content before sending to mainnet.
+A boc file, or "Bag of Cells," is a signed transaction on the TON blockchain that has the following fields:
 
-## Usage
+- `Source Wallet`
+- `Destination Address`
+- `Amount in Ton`
+- `bounce flag`
+- `data`
+- `StateInit Code and Data`
 
-1. Open the parser website (available on https://ton-defi-org.github.io/boc-parser-estimator)
- 
-2. Open the BOC file to parse through the UI, or choose an pre maid boc from the list.
 
-3. Click on estimate BOC button, and view the resulted messages below
+### Emulate Transactions
+The B💎c Parser app allows you to run an emulation of a boc file on the network, and get the expected result. The emulation is done using the (ton-tvm-bus)[https://github.com/ton-defi-org/ton-tvm-bus] module. This can be useful for testing and debugging purposes.
 
 
-To reload a new boc file please refresh the page.
 
-## Development
-
-To build a new version of the website and deploy to GitHub pages:
-
-```
-npm install
-npm run build
-```
-
-The build output will be found in the `./docs` directory. By pushing everything to master, the `./docs` directory will be pushed as well and GitHub pages will be deployed.
+### Share Boc & Publish
+the app allows you to share the boc file through a link, which is useful for air gapped devices. This enables you to sign a transaction on an offline computer (see example at https://github.com/ton-defi-org/ton-offline-transaction), and publish ( using the publish boc button) the signed boc through a device with internet connection.

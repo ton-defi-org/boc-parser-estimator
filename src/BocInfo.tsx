@@ -1,10 +1,10 @@
-
 import {  useState } from 'react';
 import { RawStateInit } from 'ton';
 import { boc } from './App';
 import { BocResult } from './BocResult';
 import BN from "bn.js";
 import { ShareQrCode } from './ShareQrCode';
+import { u8ToBase64Str } from './utils';
 
 type BocResult = {
     
@@ -34,6 +34,11 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         //@ts-ignore
         setPublishingBoc(true);
         
+        if(ArrayBuffer.isView(boc.rawData)) {
+            boc.rawData = u8ToBase64Str(boc.rawData);
+        }
+        
+
         let bocResultResponse = await publishBoc(boc.rawData);
         
         setPublishingBoc(false);
@@ -43,7 +48,10 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
     }
 
     const shareClick =async () => {
-        const url = `https://ton-defi-org.github.io/boc-parser-estimator/#${boc.rawData}`
+        let base64 = u8ToBase64Str(boc.rawData);
+        const url = `https://ton-defi-org.github.io/boc-parser-estimator/#${base64}`;
+        console.log(url);
+        
         setShareUrl(url)
     }
     
