@@ -40,6 +40,10 @@ export type boc  = {
     rawData?: any
     init?: any
     bounce?: boolean
+    seqno: number,
+    msgSeqno: number,
+    validUntil: number,
+    subWalletId: number
 };
 
 
@@ -82,7 +86,7 @@ function App() {
             fr.readAsArrayBuffer(file.current.files[0]);
     }, []);
 
-    function loadBoc(fileBuffer: any, fileObject: any) {
+    async function loadBoc(fileBuffer: any, fileObject: any) {
         if(fileObject.name.indexOf('.boc') === -1 ) {
             setError('Invalid file name, file must have the *.boc extention');
             return;
@@ -92,7 +96,7 @@ function App() {
             return;
         }
         console.log('base64', array_buffer_to_buffer(fileBuffer).toString('base64'));
-        let bocData = parseBoc(array_buffer_to_buffer(fileBuffer).toString('base64'));
+        let bocData = await parseBoc(array_buffer_to_buffer(fileBuffer).toString('base64'));
         if (!bocData.value) {
             // @ts-ignore
             bocData.value = new BN('0');
@@ -112,13 +116,15 @@ function App() {
 
     }
 
-    function loadBocFromStr(bocStr: string) {
+    async function loadBocFromStr(bocStr: string) {
         setBoc(initialBoc);
-        let bocData = parseBoc(bocStr);
+        
+        let bocData = await parseBoc(bocStr);
         if (!bocData.value) {
             // @ts-ignore
             bocData.value = new BN('0');
         }
+        
         console.log('loadBocFromStr',{mydata: bocData});
 
         const wallet = (bocData.from as Address).toFriendly()!!

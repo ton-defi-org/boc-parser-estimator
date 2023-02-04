@@ -1,20 +1,26 @@
 import {  useState } from 'react';
-import { RawStateInit } from 'ton';
+import { Address, RawStateInit } from 'ton';
 import { boc } from './App';
 import { BocResult } from './BocResult';
 import BN from "bn.js";
 import { ShareQrCode } from './ShareQrCode';
 import { u8ToBase64Str } from './utils';
+import { TonClient } from "ton";
+
 
 type BocResult = {
     
 }
+
+
 
 export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimateBoc: any, publishBoc: any}) => {
     const { boc, onClear, estimateBoc, bocName, publishBoc } = props;
 
     const [results, setResults] = useState({} as BocResult);
     const [isLoading, setIsLoading] = useState(false);
+    const [sendBocRes, setSendBocRes] = useState("");
+    const [sendBocError, setSendBocError] = useState("");
     const [isPublishingBoc, setPublishingBoc] = useState(false);
     const [shareUrl, setShareUrl] = useState("");
 
@@ -37,13 +43,16 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         if(ArrayBuffer.isView(boc.rawData)) {
             boc.rawData = u8ToBase64Str(boc.rawData);
         }
+        try {
+            let bocResultResponse = await publishBoc(boc.rawData);
+            setPublishingBoc(false);
+            console.log(bocResultResponse);
+            setSendBocRes(bocResultResponse);
+        } catch (e: any) {
+            setSendBocError(e.message)
+        }   
         
-
-        let bocResultResponse = await publishBoc(boc.rawData);
         
-        setPublishingBoc(false);
-        
-        console.log(bocResultResponse);
         
     }
 
@@ -76,8 +85,20 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         
     }
 
-    let buttonClass = (isLoading ? `is-loading` : ``) + ` button is-info`;
+    let sendBocResEl = null;
+    if (sendBocRes) {
+        sendBocResEl = <div className='boc-res-success'>{sendBocRes}</div>
+    }
 
+    if (sendBocError) {
+        sendBocResEl = <div className='boc-res-error'>{sendBocError}</div>
+    }
+
+    let buttonClass = (isLoading ? `is-loading` : ``) + ` button is-info`;
+    
+
+    console.log();
+    
     return (
         <div>
             <div className='title'>{bocName}</div>
@@ -87,7 +108,15 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             </div>
             <div>
                 <div className='mini-title'>Destination Address: </div>
-                <div className='addr'>{boc.destination}</div>
+                <div className='addr'>{boc.destination} </div>
+                
+            </div>
+            <div>
+                <div className={'mini-title ' + (boc.msgSeqno == boc.seqno ? '': 'error-icon-seqno')}>Wallet Seqno: <b>{boc.seqno}</b> == Boc Seqno: <b>{boc.msgSeqno}</b></div>
+                <div className={'mini-title ' + (boc.validUntil - Date.now() / 1000 > 0 ? '' : 'error-icon-expired')}><b>Valid Until:</b> {new Date(boc.validUntil * 1000).toISOString()}</div>
+            </div>
+            <div>
+                <div className='mini-title'><b>SubWalletId:</b> {boc.subWalletId} </div>
             </div>
             <div>
                 <div className='mini-title'>Transfer Amount: </div>
@@ -106,6 +135,8 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             </div>
             <div>{stateInit}</div>
             <br />
+            {sendBocResEl}
+
             <button className='button ' onClick={onClear}>❌ Clear</button>
             <span className='p-10'></span>
             <button className={buttonClass} onClick={runBocEmulator}>🎬 Estimate BOC</button>

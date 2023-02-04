@@ -1,42 +1,48 @@
-
-
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-  
+
   font-size: 19px;
   max-width: 1024px;
-  margin: 10px auto;  
+  margin: 10px auto;
 }
+
 pre {
   max-height: 80px;
   overflow: scroll;
 }
+
 .p-10 {
   padding: 10px;
 }
+
 .p-20 {
   margin-top: 10px;
   padding: 20px;
 }
+
 .font-xl {
   font-size: 30px;
   letter-spacing: 7px;
   text-align: center;
 }
+
 .app {
   max-width: 1024px;
   margin: 0 auto;
 }
+
 .app-main {
   padding-bottom: 20px;
 }
+
 .header {
   font-size: 40px;
 }
+
 .mini-header {
-  
+
   padding-top: 10px;
   font-size: 30px;
 }
@@ -56,13 +62,13 @@ input {
 
 .title-h2 {
   margin-top: 16px;
-  
+
   text-align: center;
   font-size: 26px;
 }
 
 .addr {
-  
+
   font-family: monospace;
   color: #3CA4DB;
   word-break: break-all;
@@ -77,12 +83,13 @@ input {
   height: 250px;
   margin-left: auto;
   margin-right: auto;
-  
+
 }
 
 .file {
   display: none;
 }
+
 .btn {
   border: 1px solid #ccc;
   display: inline-block;
@@ -92,6 +99,7 @@ input {
   color: #fff;
   border-radius: 7px;
 }
+
 .drop-zone {
   width: 400px;
   height: 200px;
@@ -103,7 +111,7 @@ input {
 .drop-zone::before {
   content: "Drop *.boc Here";
   position: relative;
-  top:80px;
+  top: 80px;
   font-size: 28px;
   color: #aaa;
 }
@@ -138,10 +146,11 @@ input {
   width: 400px;
   margin: 10px auto;
 }
+
 .qr-logo {
   height: 20px;
   position: relative;
-  top:2px;
+  top: 2px;
   padding-right: 10px;
 }
 
@@ -157,31 +166,36 @@ input {
   color: crimson;
   padding: 10px;
 }
+
 .button {
   margin: 10px 0;
 }
-.overlow-x { 
+
+.overlow-x {
   overflow-x: scroll;
 }
+
 .border-top {
   border-top: 1px solid #989898;
 }
+
 .boc-button {
-  
+
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
   color: rgb(56, 166, 244);
   margin-left: 20px;
   border-radius: 7px;
-  
+
   cursor: pointer;
 }
 
 .boc-button:hover {
-  
+
   text-decoration: underline;
 }
+
 .border-b {
   border-bottom: 1px solid rgb(202, 202, 202);
 }
@@ -207,9 +221,7 @@ input {
   display: flex;
 }
 
-.action-line {
-
-}
+.action-line {}
 
 .message-item {
   border: 1px solid #ccc;
@@ -239,7 +251,7 @@ input {
 
 
 
-.action-line  div {
+.action-line div {
   margin: 5px;
   padding: 5px;
 }
@@ -252,7 +264,7 @@ input {
   font-size: 36px;
   text-align: center;
   line-height: 2;
-  
+
 }
 
 .message-item-row {
@@ -271,7 +283,7 @@ input {
 
 } */
 
-.message-body-pre{
+.message-body-pre {
   padding: 0.25rem;
 }
 
@@ -279,6 +291,7 @@ input {
   top: 10px;
   position: relative;
 }
+
 .message-address {
   font-weight: 400;
   font-size: 18px;
@@ -292,6 +305,7 @@ input {
 .indent-1 {
   margin-left: 140px;
 }
+
 .indent-2 {
   margin-left: 280px;
 }
@@ -307,7 +321,7 @@ input {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border-top: 1px solid #aaa;  
+  border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
   padding: 10px;
 
@@ -322,8 +336,8 @@ input {
   font-size: 12px;
 }
 
-.fee-value{
-  
+.fee-value {
+
   margin-left: 10px;
   min-width: 40px;
 }
@@ -336,7 +350,7 @@ input {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 6px;
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
 .genesis-wallet::after {
@@ -345,5 +359,59 @@ input {
   position: absolute;
   top: 44%;
   right: -30%;
-  
+
+}
+
+
+.boc-res-success {
+  color: #3CA4DB;
+  padding: 10px;
+  background-color: aliceblue;
+}
+
+.boc-res-error {
+  color: #db3c3c;
+  padding: 10px;
+  background-color: rgb(188, 160, 160);
+}
+
+.error-icon {
+  color: #db3c3c;
+
+}
+
+.error-icon::before {
+  content: " ❌ ";
+}
+
+
+.error-icon-seqno {
+  content: "";
+  color: #db3c3c;
+}
+
+.error-icon-seqno::before {
+  content: "❌ Boc seqno doesn't match the wallet | ";
+  color: #db3c3c;
+}
+
+.error-icon-seqno {
+
+  color: #db3c3c;
+}
+
+.error-icon-seqno::before {
+  content: " ❌ Boc seqno doesn't match the wallet seqno ";
+  color: #db3c3c;
+}
+
+
+.error-icon-expired {
+
+  color: #db3c3c;
+}
+
+.error-icon-expired::before {
+  content: " ❌ Boc is expired was ";
+  color: #db3c3c;
 }

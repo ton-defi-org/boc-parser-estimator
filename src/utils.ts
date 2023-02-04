@@ -1,4 +1,4 @@
-import { parseMessage, parseStateInit, Cell, Slice, Address, RawCommonMessageInfo, RawCurrencyCollection } from "ton";
+import { parseMessage, parseStateInit, Cell, Slice, Address, RawCommonMessageInfo, RawCurrencyCollection, TonClient } from "ton";
 import BN from "bn.js";
 
 type RawCommonMessageInfoInternal = {
@@ -15,7 +15,9 @@ type RawCommonMessageInfoInternal = {
     createdAt: number;
 };
 
-
+const client = new TonClient({
+    endpoint: "https://mainnet.tonhubapi.com/jsonRPC",
+});
 
 export function parseQuery(queryString: string) {
     var query = {};
@@ -43,7 +45,7 @@ export function base64ToArrayBuffer(base64: string) {
     return bytes.buffer;
 }
 
-export function parseBoc(base64Boc: string) {
+export async function parseBoc(base64Boc: string) {
     let c = Cell.fromBoc(Buffer.from(base64Boc, "base64"));
 
     let externalMessage = parseMessage(c[0].beginParse());
@@ -60,6 +62,15 @@ export function parseBoc(base64Boc: string) {
     let innerMessage = parseMessage(slice);
     const innerInfo = innerMessage.info as RawCommonMessageInfoInternal;
 
+    
+    const externalMessageBody = externalMessage.body.beginParse();
+    externalMessageBody.skip(512); // skip signature
+    const subWalletId = externalMessageBody.readUint(32);
+    const validUntil = externalMessageBody.readUint(32);
+    const msgSeqno = externalMessageBody.readUint(32);
+
+    let seqnoRes = await client.callGetMethod(externalMessage.info.dest as Address, "seqno")
+
     return {
         bounce: innerInfo.bounce,
         from: externalMessage.info.dest,
@@ -67,6 +78,10 @@ export function parseBoc(base64Boc: string) {
         init: innerMessage.init,
         body: innerMessage.body,
         value: innerInfo.value.coins,
+        seqno: new BN(seqnoRes.stack[0][1].replace('0x', ''), 16).toNumber(),
+        msgSeqno: msgSeqno.toNumber(),
+        validUntil: validUntil.toNumber(),
+        subWalletId: subWalletId.toNumber()
     };
 }
 
