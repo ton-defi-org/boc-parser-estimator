@@ -364,9 +364,18 @@ input {
 
 
 .boc-res-success {
-  color: #3CA4DB;
+  color: #db3c3c;
   padding: 10px;
-  background-color: aliceblue;
+  background-color: #fff0f0;
+}
+
+.boc-res-ok {
+  color: #3cdb79;
+  background-color: rgb(240, 255, 252);
+}
+
+.boc-res-ok::before {
+  content: "✅";
 }
 
 .boc-res-error {

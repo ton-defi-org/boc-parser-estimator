@@ -87,7 +87,8 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
 
     let sendBocResEl = null;
     if (sendBocRes) {
-        sendBocResEl = <div className='boc-res-success'>{sendBocRes}</div>
+        let isOk = sendBocRes.indexOf('{"ok":true') > -1;
+        sendBocResEl = <div className={'boc-res-success ' + (isOk ? 'boc-res-ok' : '')}>{sendBocRes}</div>
     }
 
     if (sendBocError) {
