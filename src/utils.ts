@@ -56,6 +56,9 @@ export async function parseBoc(base64Boc: string) {
             from: externalMessage.info.dest,
             to: externalMessage.info.dest,
             externalStateInit: externalMessage.init,
+            seqno: 0,
+            msgSeqno: 0,
+            validUntil: Date.now(),
         };
     }
     let slice = message.beginParse();
@@ -69,7 +72,13 @@ export async function parseBoc(base64Boc: string) {
     const validUntil = externalMessageBody.readUint(32);
     const msgSeqno = externalMessageBody.readUint(32);
 
-    let seqnoRes = await client.callGetMethod(externalMessage.info.dest as Address, "seqno")
+    let seqno = -1;
+    try {
+        let seqnoRes = (await client.callGetMethod(externalMessage.info.dest as Address, "seqno"))
+        seqno = new BN(seqnoRes.stack[0][1].replace('0x', ''), 16).toNumber()
+    } catch (e) {
+        
+    }
 
     return {
         bounce: innerInfo.bounce,
@@ -78,7 +87,7 @@ export async function parseBoc(base64Boc: string) {
         init: innerMessage.init,
         body: innerMessage.body,
         value: innerInfo.value.coins,
-        seqno: new BN(seqnoRes.stack[0][1].replace('0x', ''), 16).toNumber(),
+        seqno: seqno,
         msgSeqno: msgSeqno.toNumber(),
         validUntil: validUntil.toNumber(),
         subWalletId: subWalletId.toNumber()

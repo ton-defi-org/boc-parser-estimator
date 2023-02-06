@@ -6,6 +6,7 @@ import BN from "bn.js";
 import { ShareQrCode } from './ShareQrCode';
 import { u8ToBase64Str } from './utils';
 import { TonClient } from "ton";
+import { BocBody } from './BocBody';
 
 
 type BocResult = {
@@ -130,6 +131,9 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             <div>
                 {externalStateInit}
                 <div>Cell</div>
+                <pre className='pre-body'>
+                    <BocBody body={boc.bodyCell}></BocBody>
+                </pre>
                 <pre className='pre-body'>{boc.body?.toString()}</pre>
                 <div>Base64</div>
                 <pre className='pre-body'>{boc.bodyCell?.toBoc().toString("hex")}</pre>
