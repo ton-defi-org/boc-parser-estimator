@@ -7,6 +7,7 @@ import { ShareQrCode } from './ShareQrCode';
 import { u8ToBase64Str } from './utils';
 import { TonClient } from "ton";
 import { BocBody } from './BocBody';
+import { AddressAvatar } from './AddressAvatar';
 
 
 type BocResult = {
@@ -106,11 +107,15 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             <div className='title'>{bocName}</div>
             <div>
                 <div className='mini-title'>Source Wallet: </div>
-                <div className='addr'>{boc.wallet}</div>
+                <div ><AddressAvatar address={boc.wallet} size={32} />
+                    <a className='addr' target={"_blank"} href={`http://tonscan.org/address/${boc.wallet}`}>{boc.wallet}</a>
+                </div>
             </div>
             <div>
                 <div className='mini-title'>Destination Address: </div>
-                <div className='addr'>{boc.destination} </div>
+                <div ><AddressAvatar address={boc.destination} size={32} />
+                    <a className='addr'  target={"_blank"} href={`http://tonscan.org/address/${boc.destination}`}>{boc.destination}</a>
+                </div>
                 
             </div>
             <div>

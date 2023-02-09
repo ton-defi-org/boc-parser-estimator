@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "homepage": "https://ton-defi-org.github.io/boc-parser-estimator",
   "dependencies": {
+    "@dicebear/collection": "^5.3.0",
+    "@dicebear/core": "^5.3.0",
     "@types/jest": "^29.1.2",
     "@types/node": "^18.8.4",
     "@types/react": "^18.0.21",

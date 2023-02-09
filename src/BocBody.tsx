@@ -25,7 +25,15 @@ function parse(body: Cell) {
             opName: "",
         }
     }
-    const op = s.readUint(32).toNumber();
+    let op;
+    try {
+        op = s.readUint(32).toNumber();
+    } catch (e) {
+        return {
+            op: 0,
+            opName: "",
+        }
+    }
     s.readUint(64)
     
     if (op == WITHDRAW) {

@@ -68,7 +68,7 @@ input {
 }
 
 .addr {
-
+  margin-left: 10px;
   font-family: monospace;
   color: #3CA4DB;
   word-break: break-all;
@@ -362,6 +362,12 @@ input {
 
 }
 
+.avatar {
+  line-height: 40px;
+  position: relative;
+  top: 10px;
+
+}
 
 .boc-res-success {
   color: #db3c3c;
