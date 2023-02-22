@@ -8,7 +8,7 @@ import { u8ToBase64Str } from './utils';
 import { TonClient } from "ton";
 import { BocBody } from './BocBody';
 import { AddressAvatar } from './AddressAvatar';
-
+import base64url from "base64url"
 
 type BocResult = {
     
@@ -60,6 +60,7 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
 
     const shareClick =async () => {
         let base64 = u8ToBase64Str(boc.rawData);
+        base64url.fromBase64(base64)
         const url = `https://ton-defi-org.github.io/boc-parser-estimator/#${base64}`;
         console.log(url);
         
@@ -74,7 +75,6 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
         <pre className='pre-body'>Data:{boc.init?.data.toString()}</pre>
     </>) : null;
     
-    console.log('boc.body',boc.bodyCell);
     //@ts-ignore
     let externalStateInit;
     try {

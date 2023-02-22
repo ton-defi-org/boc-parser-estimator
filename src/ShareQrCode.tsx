@@ -1,14 +1,16 @@
 
 import QRCode from "react-qr-code";
+import base64url from "base64url"
 
 export const ShareQrCode = (props: { shareUrl: string }) => {
     
-    const { shareUrl } = props;
+    let { shareUrl } = props;
     
     if (!shareUrl) {
         return <></>
     }
-    
+
+    shareUrl = base64url.fromBase64(shareUrl)
     return <div title={shareUrl} style={{ height: "auto", margin: "2rem auto", maxWidth: 350, width: "100%" }}>
         <div className="title">Share this boc through QR code</div>
         <QRCode

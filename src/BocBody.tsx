@@ -8,7 +8,9 @@ export const BocBody = (props: { body?: Cell }) => {
         return <div>x{}</div>;
     }
     let parsedBody = parse(props.body)
-
+    if(!parsedBody) {
+        return <div>{props.body.toString()}</div>
+    }
     return <div>
         <div>Op:{parsedBody.opName} ({parsedBody.op})</div>    
         <div>Withdraw Amount:{parsedBody.amount}</div>    
@@ -17,9 +19,12 @@ export const BocBody = (props: { body?: Cell }) => {
 }
 
 
-function parse(body: Cell) {
-    const s = body.beginParse();
-    if (body.bits.length == 0) {
+function parse(body?: any) {
+    try {
+
+        
+        const s = body.beginParse();
+    if(body.bits.length == 0) {
         return {
             op: 0,
             opName: "",
@@ -46,9 +51,9 @@ function parse(body: Cell) {
             amount: fromNano(amount)
         }
     }
-
+    
     if (op == CHANGE_VALIDATOR) {
-
+        
         let newValidator = s.readAddress();
         return {
             op,
@@ -56,10 +61,13 @@ function parse(body: Cell) {
             newValidator: newValidator?.toFriendly()
         }
     }
+} catch(e) {
 
+    
     return {
-        op,
+        op: "",
         opName:"",
     }
+}
 
 }
