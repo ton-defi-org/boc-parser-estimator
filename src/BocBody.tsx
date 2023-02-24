@@ -11,10 +11,21 @@ export const BocBody = (props: { body?: Cell }) => {
     if(!parsedBody) {
         return <div>{props.body.toString()}</div>
     }
+
+    let value = <></>
+    let op = <></>
+    if(parsedBody.amount) {
+        value = <div>Withdraw Amount:{parsedBody.amount}</div>    
+    } else if (parsedBody.newValidator) {
+        value = <div>New validator Address: {parsedBody.newValidator}</div>    
+    }
+    if(parsedBody.op) {
+        op = <div>Op: {parsedBody.opName || ""} ({parsedBody.op} 0x{parsedBody.op.toString(16)})</div>    
+    }
+
     return <div>
-        <div>Op:{parsedBody.opName} ({parsedBody.op})</div>    
-        <div>Withdraw Amount:{parsedBody.amount}</div>    
-        <div>op:{parsedBody.newValidator}</div>    
+        {op}
+        {value}
     </div>
 }
 
