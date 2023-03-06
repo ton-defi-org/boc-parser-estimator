@@ -7,12 +7,12 @@ Current release is deployed to IPFS to serve a more secure (single html file rea
 https://ton-defi-org.github.io/boc-parser-estimator
 
 ```
-ipfs://QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+ipfs:///QmTGuyBxB6ksZ8qZp9Wxr8dHCiKNuj8eCiKh6Q62UjUuwA
 ```
 
-https://cloudflare-ipfs.com/ipfs/QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+https://cloudflare-ipfs.com/ipfs//QmTGuyBxB6ksZ8qZp9Wxr8dHCiKNuj8eCiKh6Q62UjUuwA
 
-https://ipfs.io/ipfs/QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+https://ipfs.io/ipfs//QmTGuyBxB6ksZ8qZp9Wxr8dHCiKNuj8eCiKh6Q62UjUuwA
 
 ## Overview
 
