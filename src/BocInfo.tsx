@@ -136,13 +136,11 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
             </div>
             <div>
                 {externalStateInit}
-                <div>Cell</div>
+                <div>Body</div>
                 <pre className='pre-body'>
                     <BocBody body={boc.bodyCell}></BocBody>
                 </pre>
                 <pre className='pre-body'>{boc.body?.toString()}</pre>
-                <div>Base64</div>
-                <pre className='pre-body'>{boc.bodyCell?.toBoc().toString("hex")}</pre>
             </div>
             <div>{stateInit}</div>
             <br />
