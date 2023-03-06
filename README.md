@@ -2,9 +2,19 @@
 
 Current release is deployed to IPFS to serve a more secure (single html file react app the CID of ipfs protect the code ) 
 
-https://cloudflare-ipfs.com/ipfs/QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+## Hosting
 
 https://ton-defi-org.github.io/boc-parser-estimator
+
+```
+ipfs://QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+```
+
+https://cloudflare-ipfs.com/ipfs/QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+
+https://ipfs.io/ipfs/QmXaDwbfghVpjkjgUHPWsJR9kVBrX9LvUNmX4jZZ7cdDi8
+
+## Overview
 
 Welcome to the B💎c Parser, an HTML page for handling boc files on the TON blockchain.
 
