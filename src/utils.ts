@@ -1,6 +1,5 @@
 import { parseMessage, parseStateInit, Cell, Slice, Address, RawCommonMessageInfo, RawCurrencyCollection, TonClient } from "ton";
 import BN from "bn.js";
-import base64url from "base64url"
 
 type RawCommonMessageInfoInternal = {
     type: "internal";
@@ -33,9 +32,7 @@ export function parseQuery(queryString: string) {
 }
 
 export function u8ToBase64Str(u8: any) {
-    let url = base64url.fromBase64(btoa(String.fromCharCode.apply(null, u8)));
-    
-    return url 
+    return  btoa(String.fromCharCode.apply(null, u8));
 }
 
 export function base64ToArrayBuffer(base64: string) {
@@ -94,6 +91,34 @@ export async function parseBoc(base64Boc: string) {
         msgSeqno: msgSeqno.toNumber(),
         validUntil: validUntil.toNumber(),
         subWalletId: subWalletId.toNumber()
+    };
+}
+
+export function readInternalMessage2(slice: Slice) {
+    let _tag = slice.readUint(1); //tag
+    const ihrDisabled = slice.readBit();
+    const bounce = slice.readBit();
+    const bounced = slice.readBit();
+    const src = slice.readAddress();
+    const destination = slice.readAddress();
+    const value = slice.readCoins();
+    const ihrFee = slice.readCoins();
+    const fwdFee = slice.readCoins();
+    const createdLt = slice.readUint(64);
+    const createdAt = slice.readUintNumber(32);
+    return {
+        type: "internal",
+        ihrDisabled,
+        bounce,
+        bounced,
+        src,
+        dest: destination,
+        destination,
+        value,
+        ihrFee,
+        fwdFee,
+        createdLt,
+        createdAt,
     };
 }
 
