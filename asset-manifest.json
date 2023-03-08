@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/boc-parser-estimator/static/css/main.79ce99f5.css",
-    "main.js": "/boc-parser-estimator/static/js/main.12bf2612.js",
-    "main.js.map": "/boc-parser-estimator/static/js/main.12bf2612.js.map",
+    "main.js": "/boc-parser-estimator/static/js/main.ceded465.js",
+    "main.js.map": "/boc-parser-estimator/static/js/main.ceded465.js.map",
     "index.html": "/boc-parser-estimator/index.html",
     "static/css/main.79ce99f5.css.map": "/boc-parser-estimator/static/css/main.79ce99f5.css.map",
-    "static/js/main.12bf2612.js.LICENSE.txt": "/boc-parser-estimator/static/js/main.12bf2612.js.LICENSE.txt"
+    "static/js/main.ceded465.js.LICENSE.txt": "/boc-parser-estimator/static/js/main.ceded465.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/css/main.79ce99f5.css",
-    "static/js/main.12bf2612.js"
+    "static/js/main.ceded465.js"
   ]
 }
