@@ -10,9 +10,9 @@ https://ton-defi-org.github.io/boc-parser-estimator
 ipfs:///QmTGuyBxB6ksZ8qZp9Wxr8dHCiKNuj8eCiKh6Q62UjUuwA
 ```
 
-https://cloudflare-ipfs.com/ipfs//QmTGuyBxB6ksZ8qZp9Wxr8dHCiKNuj8eCiKh6Q62UjUuwA
+https://cloudflare-ipfs.com/ipfs//QmSEvCFcCTP4x7PZskBHKQCrk5h6UWb8Ji7vV3QRAbu8eW
 
-https://ipfs.io/ipfs//QmTGuyBxB6ksZ8qZp9Wxr8dHCiKNuj8eCiKh6Q62UjUuwA
+https://ipfs.io/ipfs//QmSEvCFcCTP4x7PZskBHKQCrk5h6UWb8Ji7vV3QRAbu8eW
 
 ## Overview
 
