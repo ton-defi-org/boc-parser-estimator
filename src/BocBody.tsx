@@ -3,7 +3,10 @@ import { Cell, fromNano } from "ton"
 const WITHDRAW = 0x1000;
 const CHANGE_VALIDATOR = 0x1001;
 
-export const BocBody = (props: { body?: Cell }) => {
+export const BocBody = (props: { body?: Cell, comment?: string }) => {
+    if (props.comment) {
+        return <div>Comment: "<b>{props.comment}</b>"</div>;
+    }
     if (!props.body) {
         return <div>x{}</div>;
     }

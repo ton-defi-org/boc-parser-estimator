@@ -138,9 +138,9 @@ export const BocInfo = (props: {boc: boc, bocName:string, onClear: any, estimate
                 {externalStateInit}
                 <div>Body</div>
                 <pre className='pre-body'>
-                    <BocBody body={boc.bodyCell}></BocBody>
+                    <BocBody body={boc.bodyCell} comment={boc.comment}></BocBody>
                 </pre>
-                <pre className='pre-body'>{boc.body?.toString()}</pre>
+                {boc.comment ? null : <pre className='pre-body'>{boc.body?.toString()}</pre>}
             </div>
             <div>{stateInit}</div>
             <br />
