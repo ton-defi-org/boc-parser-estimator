@@ -16,7 +16,7 @@ type RawCommonMessageInfoInternal = {
 };
 
 const client = new TonClient({
-    endpoint: "https://mainnet.tonhubapi.com/jsonRPC",
+    endpoint: "https://toncenter.com/api/v2/jsonRPC",
 });
 
 export function parseQuery(queryString: string) {
