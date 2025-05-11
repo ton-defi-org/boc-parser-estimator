@@ -85,7 +85,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider && export CI=false && rm -rf build build && node scripts/build.js",
+    "build": "export CI=false && rm -rf build build && node scripts/build.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
