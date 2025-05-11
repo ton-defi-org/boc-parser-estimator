@@ -1,0 +1,40 @@
+name: Upload to IPFS
+
+on:
+  # Triggers the workflow on push events to the main branch
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  upload-to-ipfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      
+      - name: Install IPFS CLI
+        run: npm install -g ipfs-cli
+      
+      - name: Build
+        run: npm run build
+
+      - name: Upload file to IPFS
+        id: ipfs-upload
+        uses: aquiladev/ipfs-action@v0.3.1
+        with:
+          path: ./build/index.html  # Replace with the actual path to your file
+          service: pinata  # You can use 'ipfs', 'pinata', 'infura', or other services
+          pinataApiKey: ${{ secrets.PINATA_API_KEY }}
+          pinataSecretApiKey: ${{ secrets.PINATA_SECRET_API_KEY }}
+          
+      - name: Output IPFS hash
+        run: |
+          echo "File uploaded to IPFS with hash ${{ steps.ipfs-upload.outputs.hash }}"
+          echo "Gateway URL: https://gateway.pinata.cloud/ipfs/${{ steps.ipfs-upload.outputs.hash }}" 

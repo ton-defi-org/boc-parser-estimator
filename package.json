@@ -40,6 +40,7 @@
     "eslint-plugin-testing-library": "^3.9.2",
     "eslint-webpack-plugin": "^2.5.2",
     "file-loader": "6.1.1",
+    "form-data": "^4.0.2",
     "fs-extra": "^9.0.1",
     "gh-pages": "^4.0.0",
     "html-webpack-plugin": "4.5.0",
@@ -51,6 +52,7 @@
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
     "mini-css-extract-plugin": "0.11.3",
+    "node-fetch": "^2.7.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
@@ -83,7 +85,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "export CI=false && rm -rf build build && node scripts/build.js",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider && export CI=false && rm -rf build build && node scripts/build.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

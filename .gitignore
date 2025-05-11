@@ -135,6 +135,7 @@ psd
 thumb
 sketch
 build
+.env
 
 scripts/deploy-ipfs.mjs
 
