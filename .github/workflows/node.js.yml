@@ -1,4 +1,4 @@
-name: CI/CD
+name: Build and deploy to GitHub Pages
 
 on:
   push:

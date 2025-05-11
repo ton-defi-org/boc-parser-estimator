@@ -30,12 +30,14 @@ jobs:
 
       - name: Upload file to IPFS
         id: ipfs-upload
-        uses: aquiladev/ipfs-action@v0.3.1
+        uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
         with:
+          pin-name: 'boc-parser-estimator'
           path: ./build/index.html  # Replace with the actual path to your file
-          service: pinata  # You can use 'ipfs', 'pinata', 'infura', or other services
-          pinataApiKey: ${{ secrets.PINATA_API_KEY }}
-          pinataSecretApiKey: ${{ secrets.PINATA_SECRET_API_KEY }}
+          pinata-api-key: ${{ secrets.PINATA_API_KEY }}
+          pinata-secret-api-key: ${{ secrets.PINATA_SECRET_API_KEY }}
+          verbose: true
+          remove-old: false
           
       - name: Output IPFS hash
         run: |
