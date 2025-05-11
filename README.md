@@ -8,10 +8,10 @@ react app the CID of ipfs protect the code )
 https://ton-defi-org.github.io/boc-parser-estimator
 
 ```
-ipfs:///QmPCwf3n1nHgD5XMgstVJK4KZGKnNupA1LFBSpcDwGV1rr
+ipfs:///QmXXhT6FNKNxwx5fxLD3AiDxjMvjdvBLsiwqQQZQECGPRW
 ```
 
-https://ipfs.io/ipfs/QmPCwf3n1nHgD5XMgstVJK4KZGKnNupA1LFBSpcDwGV1rr
+https://ipfs.io/ipfs/QmXXhT6FNKNxwx5fxLD3AiDxjMvjdvBLsiwqQQZQECGPRW
 
 ## Overview
 
